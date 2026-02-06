@@ -12,7 +12,7 @@
     <nav class="navbar">
         <div class="navbar-container">
             <a href="" 
-            class="navbar-logo">CSSnippets</a>
+            class="navbar-logo">SmartTools</a>
             <button class="navbar-toggle">
                 <span class="bar"></span>
                 <span class="bar"></span>
