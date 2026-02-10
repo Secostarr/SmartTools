@@ -143,8 +143,8 @@
             @csrf
 
             <div class="mb-3">
-                <label>Username</label>
-                <input type="text" name="username" placeholder="Enter your username" required>
+                <label>Name</label>
+                <input type="text" name="username" placeholder="Enter your name" required>
             </div>
 
             <div class="mb-2">

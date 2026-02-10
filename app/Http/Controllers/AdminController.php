@@ -7,9 +7,24 @@ use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
-    public function login()
+    public function login(Request $request)
     {
-        return view ('admin.login_admin');    
+    $credentials = $request->validate([
+        'username' => 'required',
+        'password' => 'required',
+    ]);
+
+    // Menggunakan 'username' sesuai dengan name="username" di form Anda
+    if (Auth::attempt(['username' => $request->username, 'password' => $request->password])) {
+        $request->session()->regenerate();
+ 
+        // Redirect ke route dashboard admin
+        return redirect()->route('admin.dashboard');
+    }
+
+    return back()->withErrors([
+        'username' => 'Username atau password salah.',
+    ]);
     }
 
     public function auth(Request $request)
