@@ -19,15 +19,28 @@ class AdminController extends Controller
             'password' => 'required',
         ]);
         if (Auth::attempt($user)) {
-            return redirect()->route('admin.admin_dashboard');
+            return redirect()->route('admin.dashboard');
         } else {
             return back()->with('error', 'username atau password yang anda masukkan salah!!!');
         }
     }
 
-    public function dashboard()
-    {
-        return view('admin.admin_dashboard');    
+    public function dashboard() {
+        $settings = SiteSetting::pluck('value', 'key'); // Ambil semua setting
+        $users = User::all();
+        return view('admin.dashboard', compact('settings', 'users'));
+    }
+
+    public function updateSettings(Request $request) {
+        foreach ($request->settings as $key => $value) {
+            SiteSetting::updateOrCreate(['key' => $key], ['value' => $value]);
+        }
+        return back()->with('success', 'Tampilan depan berhasil diperbarui!');
+    }
+
+    public function deleteUser($id) {
+        User::findOrFail($id)->delete();
+        return back()->with('success', 'User berhasil dihapus.');
     }
 
     public function logout(Request $request)

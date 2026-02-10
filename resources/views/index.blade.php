@@ -35,11 +35,15 @@
 
     <header class="py-16 bg-white border-b border-slate-100">
         <div class="max-w-7xl mx-auto px-4 text-center">
+            @php
+                $settings = \App\Models\SiteSetting::pluck('value', 'key');
+            @endphp
+
             <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-4">
-                Satu Tempat untuk <span class="text-indigo-600">Semua Kebutuhan</span> Digital Anda
+                {{ $settings['hero_title'] ?? 'Satu Tempat untuk Semua Kebutuhan' }}
             </h1>
             <p class="text-slate-600 text-lg max-w-2xl mx-auto">
-                Akses berbagai alat produktivitas mulai dari kalkulator, QR generator, hingga tools developer dalam satu dashboard yang cepat dan mudah digunakan.
+                {{ $settings['hero_desc'] ?? 'Akses berbagai alat produktivitas dalam satu dashboard.' }}
             </p>
         </div>
     </header>
