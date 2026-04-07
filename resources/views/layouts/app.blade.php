@@ -22,8 +22,8 @@
                 </div>
                 <div class="hidden md:flex space-x-8 text-slate-600 font-medium">
                     <a href="/smarttools" class="hover:text-indigo-600 transition">Beranda</a>
-                    <a href="/smarttools" class="hover:text-indigo-600 transition">Semua Tools</a>
-                    <a href="/smarttools" class="hover:text-indigo-600 transition">Tentang</a>
+                    <a href="{{ route('tools') }}" class="hover:text-indigo-600 transition">Semua Tools</a>
+                    <a href="{{ route('about') }}" class="hover:text-indigo-600 transition">Tentang</a>
                 </div>
                 <button class="bg-indigo-600 text-white px-5 py-2 rounded-full font-semibold hover:bg-indigo-700 transition shadow-md shadow-indigo-200">
                     Mulai Sekarang

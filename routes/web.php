@@ -9,10 +9,16 @@ Route::get('/smarttools', function () {
 });
 
 Route::get('/smarttools/qrTools', [ToolsController::class, 'qrTools'])->name('qrTools');
-// Route::get('/smarttools/calTols', [ToolsController::class, 'calTols'])->name('calTools');
-Route::get('/smarttools/calculator', function () {
-    return view('tools.calculator');
-})->name('tools.calculator');
+// Route::get('/smarttools/calculator', [ToolsController::class, 'tools.calculator'])->name('calculator');
+Route::get('/calculator', function () {
+    return view('tools.calculator'); 
+})->name('calculator');
+Route::get('/tentang-kami', function () {
+    return view('pages.about'); 
+})->name('about');
+Route::get('/tools', function () {
+    return view('pages.tools'); 
+})->name('tools');
 
 Route::middleware(['guest'])->group(function () {
     Route::get('/admin/login', [AdminController::class, 'login'])->name('login');
