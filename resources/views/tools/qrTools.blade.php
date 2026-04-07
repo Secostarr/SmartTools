@@ -1,37 +1,63 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
-    <nav class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16 items-center">
-                <div class="flex items-center gap-2">
-                    <div class="bg-indigo-600 p-2 rounded-lg">
-                        <i class="fas fa-microchip text-white text-xl"></i>
-                    </div>
-                    <span class="text-2xl font-bold text-slate-800 tracking-tight">Smart<span class="text-indigo-600">Tools</span></span>
-                </div>
-                <div class="hidden md:flex space-x-8 text-slate-600 font-medium">
-                    <a href="#" class="hover:text-indigo-600 transition">Beranda</a>
-                    <a href="#" class="hover:text-indigo-600 transition">Semua Tools</a>
-                    <a href="#" class="hover:text-indigo-600 transition">Tentang</a>
-                </div>
-                <button class="bg-indigo-600 text-white px-5 py-2 rounded-full font-semibold hover:bg-indigo-700 transition shadow-md shadow-indigo-200">
-                    Mulai Sekarang
-                </button>
-            </div>
-        </div>
-    </nav>
+@extends('layouts.app')
+@section('content')
 
-    
-</body>
-</html>
+<div class="flex items-center justify-center min-h-screen">
+        <div class="bg-white p-8 rounded-2xl shadow-md w-full max-w-md text-center">
+
+            <h2 class="text-2xl font-bold mb-4 text-slate-800">
+                QR Code Generator
+            </h2>
+
+            <!-- INPUT -->
+            <input 
+                type="text" 
+                id="linkInput"
+                placeholder="Masukkan link di sini..." 
+                class="w-full p-3 border rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            >
+
+            <!-- BUTTON -->
+            <button onclick="generateQR()" 
+                class="bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 transition">
+                Generate QR
+            </button>
+
+            <!-- QR RESULT -->
+            <div class="mt-6 flex flex-col items-center gap-3">
+                <img id="qrImage" class="hidden">
+
+                <!-- tombol download -->
+                <a id="downloadBtn" download="qrcode.png" 
+                class="hidden bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition">
+                    Download QR
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- SCRIPT QR -->
+    <script>
+    function generateQR() {
+        const link = document.getElementById("linkInput").value;
+        const qrImage = document.getElementById("qrImage");
+        const downloadBtn = document.getElementById("downloadBtn");
+
+        if (link.trim() === "") {
+            alert("Masukkan link terlebih dahulu!");
+            return;
+        }
+
+        const qrURL = "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=" + encodeURIComponent(link);
+
+        // tampilkan QR
+        qrImage.src = qrURL;
+        qrImage.classList.remove("hidden");
+
+        // aktifkan tombol download
+        downloadBtn.href = qrURL;
+        downloadBtn.classList.remove("hidden");
+    }
+    </script>
+
+@endsection
