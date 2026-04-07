@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center gap-2">
+                    <div class="bg-indigo-600 p-2 rounded-lg">
+                        <i class="fas fa-microchip text-white text-xl"></i>
+                    </div>
+                    <span class="text-2xl font-bold text-slate-800 tracking-tight">Smart<span class="text-indigo-600">Tools</span></span>
+                </div>
+                <div class="hidden md:flex space-x-8 text-slate-600 font-medium">
+                    <a href="#" class="hover:text-indigo-600 transition">Beranda</a>
+                    <a href="#" class="hover:text-indigo-600 transition">Semua Tools</a>
+                    <a href="#" class="hover:text-indigo-600 transition">Tentang</a>
+                </div>
+                <button class="bg-indigo-600 text-white px-5 py-2 rounded-full font-semibold hover:bg-indigo-700 transition shadow-md shadow-indigo-200">
+                    Mulai Sekarang
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    
+</body>
+</html>

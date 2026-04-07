@@ -1,11 +1,14 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ToolsController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/smarttools', function () {
     return view('index');
 });
+
+Route::get('/smarttools/qrTools', [ToolsController::class, 'qrTools'])->name('qrTools');
 
 Route::middleware(['guest'])->group(function () {
     Route::get('/admin/login', [AdminController::class, 'login'])->name('login');
