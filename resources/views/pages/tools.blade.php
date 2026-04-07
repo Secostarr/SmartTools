@@ -65,11 +65,11 @@
         </div>
     </main>
 
-    <footer class="bg-slate-900 text-slate-400 py-10 mt-20">
+    <!-- <footer class="bg-slate-900 text-slate-400 py-10 mt-20">
         <div class="max-w-7xl mx-auto px-4 text-center">
             <p>&copy; 2026 SmartTools Project.</p>
         </div>
-    </footer>
+    </footer> -->
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 
