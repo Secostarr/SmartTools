@@ -19,10 +19,12 @@
                     <i class="fas fa-calculator text-xl"></i>
                 </div>
                 <h3 class="text-xl font-bold text-slate-800 mb-2">Scientific Calculator</h3>
-                <p class="text-slate-500 text-sm leading-relaxed">Selesaikan perhitungan matematika kompleks dengan antarmuka yang intuitif.</p>
+                <p class="text-slate-500 text-sm leading-relaxed">Selesaikan perhitungan matematika kompleks dengan antarmuka yang intuitif.</p>         
+                <a href="{{ Route('tools.calculator') }}">       
                 <div class="mt-4 flex items-center text-indigo-600 font-semibold text-sm">
                     Buka Tool <i class="fas fa-arrow-right ml-2 text-xs"></i>
                 </div>
+                </a>
             </div>
 
             <div class="tool-card bg-white p-6 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-all group cursor-pointer">

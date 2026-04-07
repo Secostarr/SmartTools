@@ -9,6 +9,10 @@ Route::get('/smarttools', function () {
 });
 
 Route::get('/smarttools/qrTools', [ToolsController::class, 'qrTools'])->name('qrTools');
+// Route::get('/smarttools/calTols', [ToolsController::class, 'calTols'])->name('calTools');
+Route::get('/smarttools/calculator', function () {
+    return view('tools.calculator');
+})->name('tools.calculator');
 
 Route::middleware(['guest'])->group(function () {
     Route::get('/admin/login', [AdminController::class, 'login'])->name('login');
