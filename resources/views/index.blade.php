@@ -78,7 +78,7 @@
                     </div>
                     <h3 class="text-xl font-bold text-slate-800 mb-3">Scientific Calculator</h3>
                     <p class="text-slate-500 text-sm leading-relaxed mb-6">Hitung persamaan matematika kompleks dengan cepat dan akurat.</p>
-                    <a href="{{ Route('calculator') }}" class="text-indigo-600 font-bold inline-flex items-center group-hover:gap-2 transition-all">
+                    <a href="{{ Route('tool.calculator') }}" class="text-indigo-600 font-bold inline-flex items-center group-hover:gap-2 transition-all">
                         Buka Tool <i class="fas fa-arrow-right ml-2"></i>
                     </a>
                 </div>

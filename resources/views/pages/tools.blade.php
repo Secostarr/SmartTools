@@ -20,7 +20,7 @@
                 </div>
                 <h3 class="text-xl font-bold text-slate-800 mb-2">Scientific Calculator</h3>
                 <p class="text-slate-500 text-sm leading-relaxed">Selesaikan perhitungan matematika kompleks dengan antarmuka yang intuitif.</p>         
-                <a href="{{ Route('calculator') }}">       
+                <a href="{{ Route('tool.calculator') }}">       
                 <div class="mt-4 flex items-center text-indigo-600 font-semibold text-sm">
                     Buka Tool <i class="fas fa-arrow-right ml-2 text-xs"></i>
                 </div>
@@ -46,9 +46,11 @@
                 </div>
                 <h3 class="text-xl font-bold text-slate-800 mb-2">Unit Converter</h3>
                 <p class="text-slate-500 text-sm leading-relaxed">Konversi satuan berat, panjang, suhu, dan mata uang secara real-time.</p>
-                <div class="mt-4 flex items-center text-indigo-600 font-semibold text-sm">
+                <a href="{{ Route('tool.converter') }}">
+                    <div class="mt-4 flex items-center text-indigo-600 font-semibold text-sm">
                     Buka Tool <i class="fas fa-arrow-right ml-2 text-xs"></i>
                 </div>
+                </a>
             </div>
 
             <div class="tool-card bg-white p-6 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-all group cursor-pointer">
@@ -57,9 +59,11 @@
                 </div>
                 <h3 class="text-xl font-bold text-slate-800 mb-2">Password Generator</h3>
                 <p class="text-slate-500 text-sm leading-relaxed">Hasilkan kata sandi yang kuat dan aman untuk melindungi akun digital Anda.</p>
-                <div class="mt-4 flex items-center text-indigo-600 font-semibold text-sm">
+                <a href="{{ Route('tool.password') }}">
+                    <div class="mt-4 flex items-center text-indigo-600 font-semibold text-sm">
                     Buka Tool <i class="fas fa-arrow-right ml-2 text-xs"></i>
                 </div>
+                </a>
             </div>
 
         </div>
